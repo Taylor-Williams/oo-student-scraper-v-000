@@ -23,7 +23,7 @@ class Scraper
     media = doc.css(".social-icon-container")[0].children
     while(counter < media.length)
       sm = media[counter].attributes["href"].value
-      case sm.splice("https://"|"www.").split(".")[0]
+      case sm.splice("https://").splice("www.").split(".")[0]
         when "twitter"
           profile[:twitter] = sm
         when "linkedin"
