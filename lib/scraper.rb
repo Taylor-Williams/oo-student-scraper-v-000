@@ -8,7 +8,7 @@ class Scraper
     doc.css(".student-card").map do |student|
         {
           :name => student.css(".student-name").text,
-          :location => student.css.(".student-location").text,
+          :location => student.css(".student-location").text,
           :link => student.children[1].attributes["href"].value
         }
     end
