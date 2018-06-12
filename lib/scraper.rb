@@ -37,6 +37,7 @@ class Scraper
       end
       counter += 2
     end
+    profile
   end
 
 end
