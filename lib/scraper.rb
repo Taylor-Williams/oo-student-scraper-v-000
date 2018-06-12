@@ -9,7 +9,7 @@ class Scraper
         {
           :name => student.css(".student-name").text,
           :location => student.css(".student-location").text,
-          :link => student.children[1].attributes["href"].value
+          :profile_url => student.children[1].attributes["href"].value
         }
     end
   end
