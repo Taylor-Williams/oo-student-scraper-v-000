@@ -19,6 +19,7 @@ class Scraper
     profile = {}
     profile[:bio] = doc.css(".description-holder")[0].text.strip
     profile[:profile_quote] = doc.css(".profile_quote").text
+    binding.pry
     counter = 1
     media = doc.css(".social-icon-container")[0].children
     while(counter < media.length)
