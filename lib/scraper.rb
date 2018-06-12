@@ -19,6 +19,24 @@ class Scraper
     profile = {}
     profile[:bio] = doc.css(".description-holder")[0].text
     profile[:profile_quote] = doc.css(".profile_quote").text
+    counter = 1
+    media = doc.css(".social-icon-container")[0].children
+    while(counter < media.length)
+      sm = media[counter].attributes["href"].value
+      case sm.split(/https:\/\/?|www.?/).split(".")[0]
+        when "twitter"
+          profile[:twitter] = sm
+        when "linkedin"
+          profile[:linkedin] = sm
+        when "github"
+          profile[:github] = sm
+        when "youtube"
+          profile[:youtube] = sm
+        else
+          profile[:blog] = sm
+      end
+      counter += 2
+    end
   end
 
 end
